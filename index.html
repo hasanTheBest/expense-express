@@ -18,15 +18,15 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <header class="text-center">
+    <header class="text-center mb-5 mt-4">
       <h1>Expense Express</h1>
       <p>Lookup table for expense, cost and saving all in one place</p>
     </header>
     <main>
       <div class="container">
-        <div class="row">
+        <div class="row align-items-center">
           <!-- Attention Image -->
-          <div class="col-6">
+          <div class="col-12 col-md-6">
             <img
               src="images/money.jpg"
               class="img-fluid"
@@ -35,17 +35,17 @@
           </div>
 
           <!-- Calculation Area -->
-          <div class="col-6 income-saving-container">
+          <div class="col-12 col-md-6 income-saving-container">
             <!-- Income Expenses area -->
-            <div class="income-expense">
+            <div class="income-expense mt-5">
               <h4>Income</h4>
 
               <!-- Income field -->
               <div class="row mb-3">
-                <label for="income" class="col-sm-2 col-form-label"
+                <label for="income" class="col-4 col-form-label text-end"
                   >Income</label
                 >
-                <div class="col-sm-10">
+                <div class="col-6">
                   <input type="number" class="form-control" id="income" />
                 </div>
               </div>
@@ -55,26 +55,30 @@
 
               <!-- Food -->
               <div class="row mb-3">
-                <label for="food" class="col-sm-2 col-form-label">Food</label>
-                <div class="col-sm-10">
+                <label for="food" class="col-4 col-form-label text-end"
+                  >Food</label
+                >
+                <div class="col-6">
                   <input type="number" class="form-control" id="food" />
                 </div>
               </div>
 
               <!-- Rent -->
               <div class="row mb-3">
-                <label for="rent" class="col-sm-2 col-form-label">Rent</label>
-                <div class="col-sm-10">
+                <label for="rent" class="col-4 col-form-label text-end"
+                  >Rent</label
+                >
+                <div class="col-6">
                   <input type="number" class="form-control" id="rent" />
                 </div>
               </div>
 
               <!-- Clothes -->
               <div class="row mb-3">
-                <label for="clothes" class="col-sm-2 col-form-label"
+                <label for="clothes" class="col-4 col-form-label text-end"
                   >Clothes</label
                 >
-                <div class="col-sm-10">
+                <div class="col-6">
                   <input type="number" class="form-control" id="clothes" />
                 </div>
               </div>
@@ -87,12 +91,12 @@
               </div>
 
               <!-- Total Expenses and balance -->
-              <h4 class="text-center mb-2 mt-4">
-                Total Expenses: <span id="total-expenses">000 </span>
-              </h4>
-              <h4 class="text-center mb-2">
-                Balance: <span id="balance">000 </span>
-              </h4>
+              <h5 class="text-center mb-2 mt-4">
+                Total Expenses: <span id="total-expenses"> 000 </span>
+              </h5>
+              <h5 class="text-center mb-2">
+                Balance: <span id="balance"> 000 </span>
+              </h5>
             </div>
 
             <!-- Savings -->
@@ -108,12 +112,12 @@
             </div>
 
             <!-- Savings and Remaining balance -->
-            <h4 class="text-center mb-2 mt-4">
+            <h5 class="text-center mb-2 mt-4">
               Saving Amount: <span id="saving-amount">000 </span>
-            </h4>
-            <h4 class="text-center mb-2">
+            </h5>
+            <h5 class="text-center mb-2">
               Remaining Balance: <span id="remaining-balance">000 </span>
-            </h4>
+            </h5>
           </div>
         </div>
       </div>
