@@ -1,6 +1,6 @@
-// DOM References
+// ======== EventListener CLICK ===========
 
-// Calculate Income
+// Calculate button is clicked
 document
   .getElementById("calculate-income")
   .addEventListener("click", function () {
@@ -19,27 +19,38 @@ document
     setValue("balance", balance, "innerText");
 
     // clear input field
-    setValue("food");
-    setValue("rent");
-    setValue("clothes");
-    setValue("income");
+    // setValue("food");
+    // setValue("rent");
+    // setValue("clothes");
+    // setValue("income");
   });
 
-// Calculate Savings
+// Saving Button Clicked
 document
   .getElementById("calculate-saving")
   .addEventListener("click", function () {
-    // console.log("calculate savings");
+    // get saving percentage
+    const income = getValue("income");
+    const percent = parseInt(getValue("saving-percent")) / 100;
+    const savingAmount = Number(income) * percent;
+
+    // set saving amount
+    setValue("saving-amount", formatToReadableDigit(savingAmount), "innerText");
+
+    // update balance
+    const totalCost =
+      Number(getValue("total-expenses", "innerText").slice(1)) + savingAmount;
+    const remainingBalance = calculateBalance(income, totalCost);
+
+    // Set remaining balance
+    setValue(
+      "remaining-balance",
+      formatToReadableDigit(remainingBalance),
+      "innerText"
+    );
   });
 
-// get value of dom
-function getValue(id, el = "input") {
-  return document.getElementById(id)[el === "input" ? "value" : "innerText"];
-}
-// set value of dom
-function setValue(id, value = "", action = "value") {
-  document.getElementById(id)[action] = value;
-}
+// ============ Functions ==========
 
 // Calculate Expenses
 function calculateExpenses() {
@@ -59,7 +70,19 @@ function calculateBalance(income, expense) {
   return formatToReadableDigit(remaining);
 }
 
-// Number formatting to readable digit
+// =========== UTILITIES Functions =============
+
+// 1. get value of dom
+function getValue(id, action = "value") {
+  return document.getElementById(id)[action];
+}
+
+// 2. set value of dom
+function setValue(id, value = "", action = "value") {
+  document.getElementById(id)[action] = value;
+}
+
+// 3. Number formatting to readable digit
 function formatToReadableDigit(number, currency = "EUR") {
   const formattedNumber = number.toLocaleString(undefined, {
     style: "currency",

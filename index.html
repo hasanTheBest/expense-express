@@ -42,7 +42,9 @@
 
               <!-- Income field -->
               <div class="row mb-3">
-                <label for="income" class="col-4 col-form-label text-end"
+                <label
+                  for="income"
+                  class="col-4 col-form-label fw-bold text-end"
                   >Income</label
                 >
                 <div class="col-6">
@@ -55,7 +57,7 @@
 
               <!-- Food -->
               <div class="row mb-3">
-                <label for="food" class="col-4 col-form-label text-end"
+                <label for="food" class="col-4 col-form-label fw-bold text-end"
                   >Food</label
                 >
                 <div class="col-6">
@@ -65,7 +67,7 @@
 
               <!-- Rent -->
               <div class="row mb-3">
-                <label for="rent" class="col-4 col-form-label text-end"
+                <label for="rent" class="col-4 col-form-label fw-bold text-end"
                   >Rent</label
                 >
                 <div class="col-6">
@@ -75,7 +77,9 @@
 
               <!-- Clothes -->
               <div class="row mb-3">
-                <label for="clothes" class="col-4 col-form-label text-end"
+                <label
+                  for="clothes"
+                  class="col-4 col-form-label fw-bold text-end"
                   >Clothes</label
                 >
                 <div class="col-6">
@@ -85,40 +89,43 @@
 
               <!-- Calculate Button -->
               <div class="text-center">
-                <button id="calculate-income" class="btn btn-primary btn-lg">
+                <button
+                  id="calculate-income"
+                  class="btn btn-primary btn-lg text-uppercase"
+                >
                   Calculate
                 </button>
               </div>
 
               <!-- Total Expenses and balance -->
               <h5 class="text-center mb-2 mt-4">
-                Total Expenses: <span id="total-expenses"> 000 </span>
+                Total Expenses: <span id="total-expenses"> </span>
               </h5>
               <h5 class="text-center mb-2">
-                Balance: <span id="balance"> 000 </span>
+                Balance: <span id="balance"> </span>
               </h5>
             </div>
 
             <!-- Savings -->
-            <div class="savings mt-5 text-center">
-              Saving(%):
+            <div class="savings mt-5 text-center fw-bold">
+              Saving:
               <input
                 type="text"
                 id="saving-percent"
-                class="form-control w-50 d-inline"
+                class="form-control w-25 d-inline mx-2"
               />
               %
-              <button class="btn btn-success" id="calculate-saving">
+              <button class="btn btn-success ms-2" id="calculate-saving">
                 Save
               </button>
             </div>
 
             <!-- Savings and Remaining balance -->
             <h5 class="text-center mb-2 mt-4">
-              Saving Amount: <span id="saving-amount">000 </span>
+              Saving Amount: <span id="saving-amount"></span>
             </h5>
             <h5 class="text-center mb-2">
-              Remaining Balance: <span id="remaining-balance">000 </span>
+              Remaining Balance: <span id="remaining-balance"></span>
             </h5>
           </div>
         </div>
