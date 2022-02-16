@@ -18,8 +18,106 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <h1>Expense Express</h1>
-    <p>Lookup table for expense, cost and saving all in one place</p>
+    <header class="text-center">
+      <h1>Expense Express</h1>
+      <p>Lookup table for expense, cost and saving all in one place</p>
+    </header>
+    <main>
+      <div class="container">
+        <div class="row">
+          <!-- Attention Image -->
+          <div class="col-6">
+            <img
+              src="images/money.jpg"
+              class="img-fluid"
+              alt="Accountant with money in hand"
+            />
+          </div>
+
+          <!-- Calculation Area -->
+          <div class="col-6 income-saving-container">
+            <!-- Income Expenses area -->
+            <div class="income-expense">
+              <h4>Income</h4>
+
+              <!-- Income field -->
+              <div class="row mb-3">
+                <label for="income" class="col-sm-2 col-form-label"
+                  >Income</label
+                >
+                <div class="col-sm-10">
+                  <input type="number" class="form-control" id="income" />
+                </div>
+              </div>
+
+              <!-- Expenses -->
+              <h4>Expense</h4>
+
+              <!-- Food -->
+              <div class="row mb-3">
+                <label for="food" class="col-sm-2 col-form-label">Food</label>
+                <div class="col-sm-10">
+                  <input type="number" class="form-control" id="food" />
+                </div>
+              </div>
+
+              <!-- Rent -->
+              <div class="row mb-3">
+                <label for="rent" class="col-sm-2 col-form-label">Rent</label>
+                <div class="col-sm-10">
+                  <input type="number" class="form-control" id="rent" />
+                </div>
+              </div>
+
+              <!-- Clothes -->
+              <div class="row mb-3">
+                <label for="clothes" class="col-sm-2 col-form-label"
+                  >Clothes</label
+                >
+                <div class="col-sm-10">
+                  <input type="number" class="form-control" id="clothes" />
+                </div>
+              </div>
+
+              <!-- Calculate Button -->
+              <div class="text-center">
+                <button id="calculate-income" class="btn btn-primary btn-lg">
+                  Calculate
+                </button>
+              </div>
+
+              <!-- Total Expenses and balance -->
+              <h4 class="text-center mb-2 mt-4">
+                Total Expenses: <span id="total-expenses">000 </span>
+              </h4>
+              <h4 class="text-center mb-2">
+                Balance: <span id="balance">000 </span>
+              </h4>
+            </div>
+
+            <!-- Savings -->
+            <div class="savings mt-5 text-center">
+              Save:
+              <input
+                type="text"
+                id="saving-percent"
+                class="form-control w-50 d-inline"
+              />
+              %
+              <button class="btn btn-success">Save</button>
+            </div>
+
+            <!-- Savings and Remaining balance -->
+            <h4 class="text-center mb-2 mt-4">
+              Saving Amount: <span id="saving-amount">000 </span>
+            </h4>
+            <h4 class="text-center mb-2">
+              Remaining Balance: <span id="remaining-balance">000 </span>
+            </h4>
+          </div>
+        </div>
+      </div>
+    </main>
 
     <!-- Javascript -->
     <script src="js/script.js"></script>
