@@ -48,7 +48,7 @@
                   >Income</label
                 >
                 <div class="col-6">
-                  <input type="number" class="form-control" id="income" />
+                  <input type="text" class="form-control" id="income" />
                 </div>
               </div>
 
@@ -61,7 +61,7 @@
                   >Food</label
                 >
                 <div class="col-6">
-                  <input type="number" class="form-control" id="food" />
+                  <input type="text" class="form-control" id="food" />
                 </div>
               </div>
 
@@ -71,7 +71,7 @@
                   >Rent</label
                 >
                 <div class="col-6">
-                  <input type="number" class="form-control" id="rent" />
+                  <input type="text" class="form-control" id="rent" />
                 </div>
               </div>
 
@@ -83,7 +83,7 @@
                   >Clothes</label
                 >
                 <div class="col-6">
-                  <input type="number" class="form-control" id="clothes" />
+                  <input type="text" class="form-control" id="clothes" />
                 </div>
               </div>
 
@@ -109,11 +109,17 @@
             <!-- Savings -->
             <div class="savings mt-5 text-center fw-bold">
               Saving:
-              <input
-                type="text"
-                id="saving-percent"
-                class="form-control w-25 d-inline mx-2"
-              />
+              <span
+                class="d-inline-block mx-2 w-25"
+                style="vertical-align: top"
+              >
+                <input
+                  type="text"
+                  id="saving-percent"
+                  class="form-control d-block"
+                  max="100"
+                />
+              </span>
               %
               <button class="btn btn-success ms-2" id="calculate-saving">
                 Save

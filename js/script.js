@@ -1,3 +1,51 @@
+// Error check
+function createNode(e) {
+  e.target.focus();
+  e.target.style.border = "2px solid red";
+  // e.target.style.color = "red";
+
+  if (e.target.parentElement.childElementCount < 2) {
+    let errorNode = document.createElement("small");
+    errorNode.setAttribute("class", "text-danger error-msg");
+    e.target.parentNode.appendChild(errorNode);
+    return errorNode;
+  } else {
+    return document.querySelector("#" + e.target.id + " + small");
+  }
+}
+
+document.querySelector(".income-saving-container").addEventListener(
+  "blur",
+  function (e) {
+    e.stopImmediatePropagation();
+
+    if (e.target.className.includes("form-control")) {
+      const { value } = e.target;
+
+      switch (true) {
+        case !Boolean(value):
+          createNode(e).innerHTML = "Can not be empty";
+          break;
+
+        case isNaN(value):
+          createNode(e).innerHTML = "Only number is allowed";
+          break;
+
+        case Number(value) < 1:
+          createNode(e).innerHTML = "Only positive value. Please";
+          break;
+
+        default:
+          if (e.target.parentNode.childElementCount > 1) {
+            document.querySelector("#" + e.target.id + " + small").remove();
+          }
+          e.target.style.border = "2px solid green";
+      }
+    }
+  },
+  true
+);
+
 // ======== EventListener CLICK ===========
 
 // Calculate button is clicked
