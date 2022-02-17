@@ -13,13 +13,13 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
-
-    <!--Custom CSS -->
-    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
     <header class="text-center mb-5 mt-4">
-      <h1>Expense Express</h1>
+      <h1>
+        <span class="text-danger">Exp</span>ense
+        <span class="text-success">Exp</span>ress
+      </h1>
       <p>Lookup table for expense, cost and saving all in one place</p>
     </header>
     <main>
@@ -88,21 +88,23 @@
               </div>
 
               <!-- Calculate Button -->
-              <div class="text-center">
+              <div class="text-center fw-bold">
                 <button
                   id="calculate-income"
                   class="btn btn-primary btn-lg text-uppercase"
                 >
                   Calculate
                 </button>
+                <small class="d-block my-2 text-danger error-text"></small>
               </div>
 
               <!-- Total Expenses and balance -->
               <h5 class="text-center mb-2 mt-4">
-                Total Expenses: <span id="total-expenses"> </span>
+                Total Expenses:
+                <span class="text-danger" id="total-expenses"> </span>
               </h5>
               <h5 class="text-center mb-2">
-                Balance: <span id="balance"> </span>
+                Balance: <span id="balance" class="text-success"> </span>
               </h5>
             </div>
 
@@ -124,14 +126,17 @@
               <button class="btn btn-success ms-2" id="calculate-saving">
                 Save
               </button>
+              <small class="d-block my-2 text-danger error-text"></small>
             </div>
 
             <!-- Savings and Remaining balance -->
             <h5 class="text-center mb-2 mt-4">
-              Saving Amount: <span id="saving-amount"></span>
+              Saving Amount:
+              <span id="saving-amount" class="text-primary"></span>
             </h5>
             <h5 class="text-center mb-2">
-              Remaining Balance: <span id="remaining-balance"></span>
+              Remaining Balance:
+              <span id="remaining-balance" class="text-success"></span>
             </h5>
           </div>
         </div>
