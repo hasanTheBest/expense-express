@@ -91,13 +91,15 @@ function calculateBalance(income, expense) {
 function isAmountAvailable(e, principal, cost) {
   let errorNode = document.querySelector("#" + e.target.id + " ~ .error-text");
 
-  if (principal > cost) {
+  if (principal >= cost) {
     errorNode.innerText = "";
     return true;
   } else {
-    errorNode.innerText = `Amount, ${formatToReadableDigit(
-      principal
-    )} is low to Cost, ${formatToReadableDigit(cost)}`;
+    errorNode.innerText = `${
+      e.target.id === "calculate-income" ? "Income" : "Balance"
+    }, ${formatToReadableDigit(principal)} is low to ${
+      e.target.id === "calculate-income" ? "Expense" : "Saving"
+    }, ${formatToReadableDigit(cost)}`;
   }
 
   return false;
@@ -119,8 +121,8 @@ function validateInput(e) {
         createNode(e).innerHTML = "Only number is allowed";
         break;
 
-      case Number(value) < 1:
-        createNode(e).innerHTML = "Only positive value. Please";
+      case Number(value) < 0:
+        createNode(e).innerHTML = "Only non-negative value. Please";
         break;
 
       default:
