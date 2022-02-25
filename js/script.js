@@ -54,10 +54,9 @@ document
       );
 
       // update balance
-      const totalCost = Number(initial.expenses) + savingAmount;
       const remainingBalance = calculateBalance(
         Number(initial.balance),
-        totalCost
+        savingAmount
       );
 
       // Set remaining balance
